@@ -8,6 +8,15 @@ pipeline {
                 sh 'pwd'
             }
         }
-    
+      stage ('deploy') {
+            steps {
+                sh 'pwd'
+                sh 'hostname -i'
+                sh 'sudo cp -R /var/lib/jenkins/workspace/my first pipeline/hello-world-war-1.0.0.war /opt/tomcat/webapps/'
+                sh 'sudo sh /opt/tomcat/bin/shutdown.sh'
+                sh 'sleep 2'
+                sh 'sudo sh /opt/tomcat/bin/startup.sh'
+            }
+        }
     }
 }
