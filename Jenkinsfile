@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh 'mvn package'
                 sh 'ls'
+                sh 'pwd'
             }
         }
     
