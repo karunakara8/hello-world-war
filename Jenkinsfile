@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage ('build') {
             steps {
-                sh 'pwd'
-                sh 'whoami'
                 sh 'mvn package'
+                sh 'ls'
             }
         }
         stage ('deploy') {
